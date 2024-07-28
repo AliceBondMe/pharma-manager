@@ -39,8 +39,10 @@
   --background-cancel-secondary: rgba(29, 30, 33, 0.25);
   --accent: #1fac39;
   --text-primary: #1d1e21;
+  --text-secondary: #93939a;
   --text-contrast: #f7f8fa;
   --text-semitransparent: rgba(29, 30, 33, 0.6);
+  --borders-primary: rgba(241, 241, 241, 0.5);
   --error: #ce062b;
   --backdrop: rgba(18, 20, 23, 0.2);
   --transition-main: 300ms ease-in-out;

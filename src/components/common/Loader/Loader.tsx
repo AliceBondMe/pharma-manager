@@ -1,4 +1,5 @@
 import { Watch } from "react-loader-spinner";
+
 import { loaderStyle } from "./Loader.styles";
 
 const Loader = () => {
