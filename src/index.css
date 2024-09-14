@@ -41,8 +41,10 @@
   --text-primary: #1d1e21;
   --text-secondary: #93939a;
   --text-contrast: #f7f8fa;
+  --text-contrast-hover: #aef0ba;
   --text-semitransparent: rgba(29, 30, 33, 0.6);
   --borders-primary: rgba(241, 241, 241, 0.5);
+  --borders-secondary: rgba(247, 248, 250, 0.1);
   --error: #ce062b;
   --backdrop: rgba(18, 20, 23, 0.2);
   --transition-main: 300ms ease-in-out;

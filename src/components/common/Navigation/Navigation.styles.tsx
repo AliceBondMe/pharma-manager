@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 
-export const navStyle = css`
+export const navFancyStyle = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,16 @@ export const navStyle = css`
   }
 `;
 
-export const linkStyle = css`
+export const navPlainStyle = css`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media screen and (min-width: 1440px) {
+  }
+`;
+
+export const linkFancyStyle = css`
   position: relative;
   padding: 8px 20px;
   border-radius: 40px;
@@ -52,5 +61,17 @@ export const linkStyle = css`
   &:not(.active):hover {
     background-color: var(--background-table-header);
     color: var(--text-primary);
+  }
+`;
+
+export const linkPlainStyle = css`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-contrast);
+  transition: color var(--transition-main);
+
+  &:hover {
+    color: var(--text-contrast-hover);
   }
 `;

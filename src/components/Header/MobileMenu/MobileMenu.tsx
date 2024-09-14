@@ -2,7 +2,7 @@ import { FC } from "react";
 import { createPortal } from "react-dom";
 import { IoCloseOutline } from "react-icons/io5";
 
-import Navigation from "../Navigation/Navigation";
+import Navigation from "../../common/Navigation/Navigation";
 import LogoutButton from "../LogoutButton/LogoutButton";
 
 import { MobileMenuProps } from "./types";
@@ -23,7 +23,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ closeMobileMenu }) => {
         <IoCloseOutline size={32} color="var(--text-contrast)" />
       </button>
 
-      <Navigation />
+      <Navigation closeMobileMenu={closeMobileMenu} fancyStyled />
       <LogoutButton />
     </div>,
     modalRoot as HTMLElement

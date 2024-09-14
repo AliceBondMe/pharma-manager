@@ -1,8 +1,13 @@
 import { FC } from "react";
 
-import { LogoProps } from "./types";
+import { LogoImageProps } from "./types";
 
-const Logo: FC<LogoProps> = ({ width, height, viewBox, fill }) => (
+const LogoImage: FC<LogoImageProps> = ({
+  width,
+  height,
+  viewBox,
+  fill,
+}) => (
   <svg
     width={width ?? "32"}
     height={height ?? "32"}
@@ -65,4 +70,4 @@ const Logo: FC<LogoProps> = ({ width, height, viewBox, fill }) => (
   </svg>
 );
 
-export default Logo;
+export default LogoImage;

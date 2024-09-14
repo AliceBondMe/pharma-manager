@@ -1,15 +1,14 @@
 import { FC, useState } from "react";
-import { Link } from "react-router-dom";
 import { IoIosMenu } from "react-icons/io";
 
-import Logo from "./Logo/Logo";
-import Navigation from "./Navigation/Navigation";
+import { Logo } from "../common";
+import Navigation from "../common/Navigation/Navigation";
 import LogoutButton from "./LogoutButton/LogoutButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
 
 import { useIsMobile } from "../../hooks/useIsMobile";
 
-import { headerStyle, logoGroupStyle, menuBtnStyle } from "./Header.styles";
+import { headerStyle, menuBtnStyle } from "./Header.styles";
 
 const Header: FC = () => {
   const { isMobile } = useIsMobile();
@@ -27,14 +26,11 @@ const Header: FC = () => {
 
   return (
     <div css={headerStyle}>
-      <Link to="/" css={logoGroupStyle}>
-        <Logo />
-        <span>E-Pharmacy</span>
-      </Link>
+      <Logo color="currentColor" fill="var(--accent)" />
 
       {!isMobile ? (
         <>
-          <Navigation />
+          <Navigation fancyStyled />
           <LogoutButton />
         </>
       ) : (
