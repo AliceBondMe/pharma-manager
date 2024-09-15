@@ -4,6 +4,15 @@ export const socialsListStyle = css`
   display: flex;
   gap: 12px;
   margin-top: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 20px;
+    justify-content: end;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 0px;
+  }
 `;
 
 export const socialsLinkStyle = css`

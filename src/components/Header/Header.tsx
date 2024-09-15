@@ -6,12 +6,14 @@ import Navigation from "../common/Navigation/Navigation";
 import LogoutButton from "./LogoutButton/LogoutButton";
 import MobileMenu from "./MobileMenu/MobileMenu";
 
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobileTabletDesctop } from "../../hooks/useIsMobileTabletDesctop";
+import { useIsAuthPage } from "../../hooks/useIsAuthPage";
 
 import { headerStyle, menuBtnStyle } from "./Header.styles";
 
 const Header: FC = () => {
-  const { isMobile } = useIsMobile();
+  const { isMobileOrTablet } = useIsMobileTabletDesctop();
+  const { isAuthPage } = useIsAuthPage();
   const [isMobileMenulOpen, setIsMobileMenulOpen] = useState(false);
 
   const openMobileMenu = () => {
@@ -28,21 +30,22 @@ const Header: FC = () => {
     <div css={headerStyle}>
       <Logo color="currentColor" fill="var(--accent)" />
 
-      {!isMobile ? (
-        <>
-          <Navigation fancyStyled />
-          <LogoutButton />
-        </>
-      ) : (
-        <button
-          type="button"
-          aria-label="open menu"
-          onClick={openMobileMenu}
-          css={menuBtnStyle}
-        >
-          <IoIosMenu size={32} color="var(--accent)" />
-        </button>
-      )}
+      {!isAuthPage &&
+        (!isMobileOrTablet ? (
+          <>
+            <Navigation fancyStyled />
+            <LogoutButton />
+          </>
+        ) : (
+          <button
+            type="button"
+            aria-label="open menu"
+            onClick={openMobileMenu}
+            css={menuBtnStyle}
+          >
+            <IoIosMenu size={32} color="var(--accent)" />
+          </button>
+        ))}
 
       {isMobileMenulOpen && <MobileMenu closeMobileMenu={closeMobileMenu} />}
     </div>

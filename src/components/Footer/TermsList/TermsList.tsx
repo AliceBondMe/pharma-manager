@@ -6,7 +6,7 @@ const TermsList: FC = () => {
   return (
     <ul css={termsListStyle}>
       <li css={termsItemStyle}>
-        <span>© E-Pharmacy 2023. All Rights Reserved</span>
+        <span>© E-Pharmacy 2024. All Rights Reserved</span>
       </li>
       <li css={termsItemStyle}>
         <a

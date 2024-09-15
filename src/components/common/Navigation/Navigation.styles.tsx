@@ -17,7 +17,13 @@ export const navPlainStyle = css`
   align-items: center;
   gap: 32px;
 
+  @media screen and (min-width: 768px) {
+    margin-top: 10px;
+  }
+
   @media screen and (min-width: 1440px) {
+    margin-top: 0px;
+    gap: 50px;
   }
 `;
 
@@ -73,5 +79,10 @@ export const linkPlainStyle = css`
 
   &:hover {
     color: var(--text-contrast-hover);
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.25;
   }
 `;

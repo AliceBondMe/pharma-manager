@@ -3,10 +3,13 @@ import { Outlet } from "react-router-dom";
 
 import { Footer, Header } from "../../components";
 import { Loader } from "../../components/common";
+import { useIsAuthPage } from "../../hooks/useIsAuthPage";
 
 import { containerStyle, mainContainerStyle } from "./SharedLayout.styles";
 
 const SharedLayout: FC = () => {
+  const { isAuthPage } = useIsAuthPage();
+
   return (
     <div css={mainContainerStyle}>
       <div css={containerStyle}>
@@ -17,7 +20,7 @@ const SharedLayout: FC = () => {
           </Suspense>
         </main>
       </div>
-      <Footer />
+      {!isAuthPage && <Footer />}
     </div>
   );
 };
