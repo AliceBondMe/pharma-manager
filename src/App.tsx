@@ -1,5 +1,5 @@
 import { ComponentType, LazyExoticComponent, lazy } from "react";
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 
 const SharedLayout: LazyExoticComponent<ComponentType> = lazy(
   () => import("./pages/SharedLayout/SharedLayout")
@@ -33,6 +33,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path="/" element={<Navigate to={"/register"} replace/>}/>
         <Route path="/" element={<SharedLayout />}>
           <Route path="register" element={<RegisterPage />} />
           <Route path="login" element={<LoginPage />} />

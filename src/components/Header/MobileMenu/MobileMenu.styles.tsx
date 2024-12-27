@@ -34,17 +34,3 @@ export const closeButtonStyle = css`
   }
 `;
 
-// .menuHeader {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   margin-bottom: 166px;
-// }
-
-// .imageContainer {
-//   margin: auto -16px -16px -16px;
-
-//   @media screen and (min-width: 768px) {
-//     margin: auto -32px -20px -32px;
-//   }
-// }

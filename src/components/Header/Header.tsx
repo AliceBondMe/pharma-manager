@@ -8,6 +8,7 @@ import MobileMenu from "./MobileMenu/MobileMenu";
 
 import { useIsMobileTabletDesctop } from "../../hooks/useIsMobileTabletDesctop";
 import { useIsAuthPage } from "../../hooks/useIsAuthPage";
+import { OPEN_MENU_BTN_LABEL } from '../../constants/strings';
 
 import { headerStyle, menuBtnStyle } from "./Header.styles";
 
@@ -39,7 +40,7 @@ const Header: FC = () => {
         ) : (
           <button
             type="button"
-            aria-label="open menu"
+            aria-label={OPEN_MENU_BTN_LABEL}
             onClick={openMobileMenu}
             css={menuBtnStyle}
           >

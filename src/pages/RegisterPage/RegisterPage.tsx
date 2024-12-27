@@ -1,12 +1,13 @@
 import { FC } from "react";
 
 import { AuthMotto } from "../../components";
+import RegistrationForm from '../../components/AuthForms/RegistrationForm';
 
 const RegisterPage: FC = () => {
   return (
     <>
-      <h2>RegisterPage</h2>
       <AuthMotto />
+      <RegistrationForm/>
     </>
   );
 };

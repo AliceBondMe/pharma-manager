@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 export const mottoBlockStyle = css`
   display: flex;
   flex-direction: column;
+  margin: 50px auto 20px auto;
 `;
 
 export const imageStyle = css`

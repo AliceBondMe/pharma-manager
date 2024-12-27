@@ -2,14 +2,15 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 
 import LogoImage from "./LogoImage";
-import { logoGroupStyle } from "./Logo.styles";
 import { LogoProps } from "./types";
+import { LOGO } from '../../../constants/strings';
+import { logoGroupStyle } from "./Logo.styles";
 
 const Logo: FC<LogoProps> = ({ color, fill, width, height, viewBox }) => {
   return (
     <Link to="/" css={logoGroupStyle(color)}>
       <LogoImage width={width} height={height} viewBox={viewBox} fill={fill} />
-      <span>E-Pharmacy</span>
+      <span>{LOGO}</span>
     </Link>
   );
 };

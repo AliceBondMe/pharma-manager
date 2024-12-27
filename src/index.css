@@ -38,6 +38,7 @@
   --background-cancel-primary: rgba(29, 30, 33, 0.1);
   --background-cancel-secondary: rgba(29, 30, 33, 0.25);
   --accent: #1fac39;
+  --accent-hover: #118025;
   --text-primary: #1d1e21;
   --text-secondary: #93939a;
   --text-contrast: #f7f8fa;
@@ -47,6 +48,8 @@
   --borders-secondary: rgba(247, 248, 250, 0.1);
   --error: #ce062b;
   --backdrop: rgba(18, 20, 23, 0.2);
+  --input-borders: rgba(29, 30, 33, 0.20);
+  --input-placeholder: rgba(29, 30, 33, 0.40);
   --transition-main: 300ms ease-in-out;
 }
 

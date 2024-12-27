@@ -1,12 +1,14 @@
 import { FC } from "react";
 
+import { COPYRIGHT, PRIVACY_POLICY, TERMS } from '../../../constants/strings';
+
 import { termsItemStyle, termsListStyle } from "./TermsList.styles";
 
 const TermsList: FC = () => {
   return (
     <ul css={termsListStyle}>
       <li css={termsItemStyle}>
-        <span>© E-Pharmacy 2024. All Rights Reserved</span>
+        <span>{COPYRIGHT}</span>
       </li>
       <li css={termsItemStyle}>
         <a
@@ -14,7 +16,7 @@ const TermsList: FC = () => {
           target="blank"
           rel="noopener noreferrer"
         >
-          Privacy Policy
+          {PRIVACY_POLICY}
         </a>
       </li>
       <li css={termsItemStyle}>
@@ -23,7 +25,7 @@ const TermsList: FC = () => {
           target="blank"
           rel="noopener noreferrer"
         >
-          Terms & Conditions
+          {TERMS}
         </a>
       </li>
     </ul>

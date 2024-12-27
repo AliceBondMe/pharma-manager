@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import medicineImg from "../../assets/images/medicine.png";
+import { MAIN_IMAGE_ALT } from '../../constants/strings';
 
 import {
   imageStyle,
@@ -14,7 +15,7 @@ const AuthMotto: FC = () => {
     <div css={mottoBlockStyle}>
       <img
         src={medicineImg}
-        alt="Medicine pills grouped with green leaves"
+        alt={MAIN_IMAGE_ALT}
         css={imageStyle}
       />
       <h1 css={textStyle}>

@@ -6,13 +6,15 @@ import Navigation from "../common/Navigation/Navigation";
 import TermsList from "./TermsList/TermsList";
 import SocialsList from "./SocialsList/SocialsList";
 
+import { useIsMobileTabletDesctop } from "../../hooks/useIsMobileTabletDesctop";
+import { FOOTER_TEXT } from '../../constants/strings';
+
 import {
   footerMainStyle,
   footerPartStyle,
   footerStyle,
   textStyle,
 } from "./Footer.styles";
-import { useIsMobileTabletDesctop } from "../../hooks/useIsMobileTabletDesctop";
 
 const Footer: FC = () => {
   const { isTabletOrDesctop } = useIsMobileTabletDesctop();
@@ -23,8 +25,7 @@ const Footer: FC = () => {
         <div>
           <Logo color="currentColor" fill="currentColor" />
           <p css={textStyle}>
-            Created a drug franchise that embodies effective formulas and
-            changes the approach to treatment.
+            {FOOTER_TEXT}
           </p>
         </div>
 
