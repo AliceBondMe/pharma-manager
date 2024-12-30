@@ -1,13 +1,15 @@
 import { FC } from "react";
 
-import { AuthMotto } from "../../components";
+import { AuthMotto, LoginForm } from "../../components";
+
+import { loginContainerStyle } from './LoginPage.styles';
 
 const LoginPage: FC = () => {
   return (
-    <>
-      <h2>LoginPage</h2>
+    <div css={loginContainerStyle}>
       <AuthMotto />
-    </>
+      <LoginForm />
+    </div>
   );
 };
 export default LoginPage;

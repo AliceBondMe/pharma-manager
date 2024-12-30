@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 export const mainContainerStyle = css`
   display: flex;
   flex-direction: column;
-  width: 100vw;
   min-height: 100vh;
 `;
 

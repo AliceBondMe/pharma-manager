@@ -2,13 +2,15 @@ import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { TextInput } from '../common';
-import { BUTTON_REGISTER, LOGIN_LINK_TEXT } from '../../constants/strings';
+import { BUTTON_LOGIN, REGISTER_LINK_TEXT} from '../../constants/strings';
 import { fields } from './authFields';
 
-import { formStyle, loginLinkStyle, registerButtonStyle } from './AuthForms.styles';
+import { authLinkStyle, loginButtonStyle, loginformStyle } from './AuthForms.styles';
 import { Link } from 'react-router-dom';
 
-const RegistrationForm: FC = () => {
+const LoginForm: FC = () => {
+  const loginFields = [fields[1], fields[3]];
+
   const {
     register,
     trigger,
@@ -20,9 +22,7 @@ const RegistrationForm: FC = () => {
   
   const onSubmit = () => {
     const user = {
-      name: getValues('username'),
       email: getValues('email'),
-      phone: getValues('phone'),
       password: getValues('password'),
     }
     console.log(user);
@@ -30,8 +30,8 @@ const RegistrationForm: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} css={formStyle}>
-      {fields.map(({ key, type, name, placeholder, minLength, maxLength, patternExp, patternError, isRequired }) =>
+    <form onSubmit={handleSubmit(onSubmit)} css={loginformStyle}>
+      {loginFields.map(({ key, type, name, placeholder, minLength, maxLength, patternExp, patternError, isRequired }) =>
         <TextInput
           register={register}
           trigger={trigger}
@@ -46,14 +46,13 @@ const RegistrationForm: FC = () => {
           isRequired={isRequired}
           key={key}
       />)}
-      <div>
-        <button type='button' disabled={!isDirty || !isValid} css={registerButtonStyle}>
-          {BUTTON_REGISTER}
-        </button>
-        <Link to='/login' css={loginLinkStyle}>{LOGIN_LINK_TEXT}</Link>
-      </div>
+      <button type='button' disabled={!isDirty || !isValid} css={loginButtonStyle}>
+        {BUTTON_LOGIN}
+      </button>
+
+      <Link to='/register' css={authLinkStyle}>{REGISTER_LINK_TEXT}</Link>
     </form>
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;

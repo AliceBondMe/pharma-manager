@@ -114,7 +114,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--accent-primary);
+  background-color: var(--accent);
   border-radius: 8px;
 }
 

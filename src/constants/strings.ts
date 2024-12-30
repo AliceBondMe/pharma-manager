@@ -2,6 +2,8 @@ export const LOGO = 'E-Pharmacy';
 
 // authentication
 export const MAIN_IMAGE_ALT = 'Medicine pills grouped with green leaves';
+export const LOGIN_LINK_TEXT = 'Already have an account?';
+export const REGISTER_LINK_TEXT = "Don't have an account?";
 
 // pages
 export const SHOP_PAGE_NAME = 'Shop';
@@ -25,11 +27,18 @@ export const FOOTER_TEXT = 'Created a drug franchise that embodies effective for
 // forms
 export const DEFAULT_PLACEHOLDER = 'Enter text';
 export const USER_NAME_PLACEHOLDER = 'User Name';
+export const EMAIL_PLACEHOLDER = 'Email address';
+export const PHONE_PLACEHOLDER = 'Phone number';
+export const PASSWORD_PLACEHOLDER = 'Password';
 
 export const FIELD_REQUIRED = 'This field is required';
 export const FIELD_ERROR_LESS_THAN = 'Enter at least ';
 export const FIELD_ERROR_MAX = 'Maximum length is ';
 export const FIELD_ERROR_END = ' characters';
+export const FIELD_ERROR_PATTERN = 'Please enter a valid ';
+export const PHONE_FIELD_ERROR_PATTERN = 'Phone number must be between 6 and 12 digits';
+export const PASSWORD_FIELD_ERROR_PATTERN = 'Password must be 6-20 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character';
 
 // buttons
 export const BUTTON_REGISTER = 'Register';
+export const BUTTON_LOGIN = 'Log in';

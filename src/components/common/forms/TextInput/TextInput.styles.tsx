@@ -5,6 +5,7 @@ export const inputStyle = (width: string) => css`
   border-radius: 60px;
   border: 1px solid var(--input-borders);
   padding: 12px 18px;
+  flex-shrink: 0;
 
   &::placeholder {
     color: var(--input-placeholder);

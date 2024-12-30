@@ -1,14 +1,15 @@
 import { FC } from "react";
 
-import { AuthMotto } from "../../components";
-import RegistrationForm from '../../components/AuthForms/RegistrationForm';
+import { AuthMotto, RegistrationForm } from "../../components";
+
+import { containerStyle } from './RegisterPage.styles';
 
 const RegisterPage: FC = () => {
   return (
-    <>
+    <div css={containerStyle}>
       <AuthMotto />
-      <RegistrationForm/>
-    </>
+      <RegistrationForm />
+    </div>
   );
 };
 export default RegisterPage;
