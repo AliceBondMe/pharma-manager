@@ -4,6 +4,8 @@ export const LOGO = 'E-Pharmacy';
 export const MAIN_IMAGE_ALT = 'Medicine pills grouped with green leaves';
 export const LOGIN_LINK_TEXT = 'Already have an account?';
 export const REGISTER_LINK_TEXT = "Don't have an account?";
+export const REGISTRATION_ERROR = "Please, check your credentials or sign in if you already have an account";
+export const LOGIN_ERROR = "Please, check your credentials or sign up if you have no account yet";
 
 // pages
 export const SHOP_PAGE_NAME = 'Shop';
