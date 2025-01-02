@@ -32,3 +32,34 @@ export interface AuthResponse {
 export interface LogoutResponse {
   message: string;
 }
+
+export interface ShopResponse {
+    _id: string;
+    shopName: string;
+    shopOwnerName: string;
+    email: string;
+    phone:  string;
+    address:  string;
+    city:  string;
+    postal:  string;
+    hasDeliverySystem: boolean;
+    owner: UserData,
+    products: [],
+}
+
+export interface ShopData {
+  shopName: string;
+  shopOwnerName: string;
+  email: string;
+  phone:  string;
+  address:  string;
+  city:  string;
+  postal:  string;
+  hasDeliverySystem: boolean;
+}
+
+export interface ShopsState {
+  shops: ShopResponse[];
+  shopsError: ErrorResponse | null | undefined;
+  createdShop: ShopResponse | null;
+}

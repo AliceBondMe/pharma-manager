@@ -3,7 +3,7 @@ import { FieldValues, UseFormRegister, UseFormTrigger } from 'react-hook-form';
 
 import { DEFAULT_PLACEHOLDER, FIELD_ERROR_LESS_THAN, FIELD_ERROR_END, FIELD_REQUIRED, FIELD_ERROR_MAX, FIELD_ERROR_PATTERN } from '../../../../constants/strings';
 
-import { errorMessageStyle, inputStyle } from './TextInput.styles';
+import { errorMessageStyle, inputStyle, labelStyle } from './TextInput.styles';
 
 export interface TextInputProps {
   label?: string;
@@ -40,7 +40,7 @@ const TextInput: FC<TextInputProps> = ({
 }) => {
   return <div>
     {label && 
-      <label htmlFor={name}>
+      <label htmlFor={name} css={labelStyle}>
         {label}
     </label>
     }
