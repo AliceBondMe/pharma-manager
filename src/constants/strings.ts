@@ -14,6 +14,7 @@ export const STATISTICS_PAGE_NAME = 'Statistics';
 
 // header
 export const LOGOUT_BTN = 'Log out';
+export const WELCOME = 'Welcome, ';
 export const OPEN_MENU_BTN_LABEL = 'Open mobile menu';
 export const CLOSE_MENU_BTN_LABEL = 'Close mobile menu';
 

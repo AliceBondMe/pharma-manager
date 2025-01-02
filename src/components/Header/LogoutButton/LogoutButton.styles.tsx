@@ -29,3 +29,22 @@ export const buttonStyle = css`
     }
   }
 `;
+
+export const messageStyle = css`
+  color: var(--text-contrast);
+
+  @media screen and (min-width: 1440px) {
+    color: var(--accent);
+  }
+`
+
+export const wrapStyle = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+  }
+`

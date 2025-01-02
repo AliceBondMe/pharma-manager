@@ -16,6 +16,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: FC<MobileMenuProps> = ({ closeMobileMenu }) => {
+
   return createPortal(
     <div css={menuContainerStyle}>
       <button
