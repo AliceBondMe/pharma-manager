@@ -24,3 +24,15 @@ export const baseButtonStyle = css`
   }
   }
 `
+
+export const secondaryButtonStyle = css`
+  ${baseButtonStyle}
+  border-radius: 30px;
+  background-color: var(--background-tertiary);
+  color: var(--accent);
+  
+  &:focus,:hover{
+    background-color: var(--accent);
+    color: var(--background-secondary);
+  }
+`

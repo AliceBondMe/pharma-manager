@@ -58,8 +58,13 @@ export interface ShopData {
   hasDeliverySystem: boolean;
 }
 
+export interface EditShopData {
+  id: string;
+  shopInfo: ShopData;
+}
+
 export interface ShopsState {
   shops: ShopResponse[];
   shopsError: ErrorResponse | null | undefined;
-  createdShop: ShopResponse | null;
+  shopActivated: ShopResponse | null;
 }

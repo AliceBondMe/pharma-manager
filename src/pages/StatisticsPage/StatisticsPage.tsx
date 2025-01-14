@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-const MedicinePage: FC = () => {
-  return <h2>MedicinePage</h2>;
+const StatisticsPage: FC = () => {
+  return <h2>StatisticsPage</h2>;
 };
-export default MedicinePage;
+export default StatisticsPage;

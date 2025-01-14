@@ -38,6 +38,7 @@ export const radioButtonStyle = css`
   border-radius: 50%;
   border: 2px solid var(--backdrop);
   appearance: none;
+  cursor: pointer;
 
   &:checked {
     border-color: var(--accent);

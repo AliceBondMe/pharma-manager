@@ -47,17 +47,17 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to={"/register"} replace/>}/>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/register" element={<RestrictedRoute redirectTo='/shop' component={<RegisterPage />}/>} />
-          <Route path="/login" element={<RestrictedRoute redirectTo='/shop' component={<LoginPage />}/>} />
-          <Route path="/create-shop" element={<PrivateRoute redirectTo='/' component={<CreateShopPage />}/>} />
-          <Route path="/edit-shop" element={<PrivateRoute redirectTo='/' component={<EditShopPage/>}/>} />
-          <Route path="/shop" element={<PrivateRoute redirectTo='/' component={<ShopPage/>}/>} />
-          <Route path="/medicines" element={<PrivateRoute redirectTo='/' component={<MedicinesPage />}/>} />
+          <Route path="register" element={<RestrictedRoute redirectTo='/shop' component={<RegisterPage />}/>} />
+          <Route path="login" element={<RestrictedRoute redirectTo='/shop' component={<LoginPage />}/>} />
+          <Route path="create-shop" element={<PrivateRoute redirectTo='/' component={<CreateShopPage />}/>} />
+          <Route path="edit-shop/:shopId" element={<PrivateRoute redirectTo='/' component={<EditShopPage/>}/>} />
+          <Route path="shop" element={<PrivateRoute redirectTo='/' component={<ShopPage/>}/>} />
+          <Route path="medicines" element={<PrivateRoute redirectTo='/' component={<MedicinesPage />}/>} />
           <Route
-            path="/medicines/:medicineId"
+            path="medicines/:medicineId"
             element={<PrivateRoute redirectTo='/' component={<MedicineDetailesPage />}/>}
           />
-          <Route path="/statistics" element={<PrivateRoute redirectTo='/' component={<StatisticsPage />}/>} />
+          <Route path="statistics" element={<PrivateRoute redirectTo='/' component={<StatisticsPage />}/>} />
         </Route>
       </Routes>
     </Suspense>

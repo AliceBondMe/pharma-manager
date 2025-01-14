@@ -1,23 +1,27 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router';
 import { Snackbar } from '@mui/material';
 
 import { shopFormFields } from './shopFormFields';
 import { TextInput } from '../common';
-import { COMMON_ERROR, CREATE_SHOP, DELIVERY_LABEL, NO, YES } from '../../constants/strings';
+import { COMMON_ERROR, CREATE_SHOP, DELIVERY_LABEL, EDIT_SHOP, NO, YES } from '../../constants/strings';
 import { ShopData } from '../../redux/types';
 import { AppDispatch } from '../../redux/store';
-import { createShop } from '../../redux/shop/operations';
+import { createShop, editShop } from '../../redux/shop/operations';
 import useSnackbar from '../../hooks/useSnackBar';
 
 import { deliveryLabelStyle, deliveryOptionLabelStyle, inputsWrapStyle, radioButtonStyle, radioWrapStyle, submitButtonStyle } from './ShopForm.styles';
+import { selectShopById } from '../../redux/shop/selectors';
 
 const ShopForm: FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
   const { isSnackbarOpen, handleOpenSnackbar, handleCloseSnackbar } = useSnackbar();
+  const { shopId } = useParams();
+  const shopToEdit = useSelector(selectShopById(shopId));
+  const [deliverySystem, setDeliverySystem] = useState('yes');
 
   const {
     register,
@@ -25,8 +29,33 @@ const ShopForm: FC = () => {
     handleSubmit,
     reset,
     getValues,
+    setValue,
     formState: {errors, isDirty, isValid},
   } = useForm({ mode: "onBlur" });
+
+  useEffect(() => {
+    if (shopToEdit) {
+      const {
+        shopName,
+        shopOwnerName,
+        email,
+        phone,
+        address,
+        city,
+        postal,
+        hasDeliverySystem,
+      } = shopToEdit
+      setValue('shopName', shopName);
+      setValue('shopOwnerName', shopOwnerName);
+      setValue('email', email);
+      setValue('phone', phone);
+      setValue('address', address);
+      setValue('city', city);
+      setValue('postal', postal);
+      setDeliverySystem(hasDeliverySystem ? 'yes' : 'no');
+    }
+  }, [shopToEdit, setValue])
+  
   
   const onSubmit = () => { 
     const shopData: ShopData = {
@@ -40,13 +69,19 @@ const ShopForm: FC = () => {
       hasDeliverySystem: getValues('hasDeliverySystem') === 'yes' ? true : false
     };
 
-    dispatch(createShop(shopData)).then((action) => {
-      if (action.type === "shop/create/fulfilled") {
-        navigate('/shop');
-        reset();
-      } else {
-        handleOpenSnackbar();
-      }
+    const editShopData = {
+      id: shopId || '',
+      shopInfo: shopData,
+    };
+
+    (shopId ? dispatch(editShop(editShopData)) : dispatch(createShop(shopData)))
+      .then((action) => {
+        if (action.type === "shop/create/fulfilled" || action.type === "shop/edit/fulfilled") {
+          navigate('/shop');
+          reset();
+        } else {
+          handleOpenSnackbar();
+        }
     })
   }
 
@@ -74,14 +109,32 @@ const ShopForm: FC = () => {
       <div>
         <p css={deliveryLabelStyle}>{DELIVERY_LABEL}</p>
         <div css={radioWrapStyle}>
-          <input {...register('hasDeliverySystem', {required: true})} type='radio' name='hasDeliverySystem' id='yes' value="yes" checked css={radioButtonStyle} />
+          <input
+            {...register('hasDeliverySystem', { required: true })}
+            type='radio'
+            name='hasDeliverySystem'
+            id='yes'
+            value="yes"
+            checked={deliverySystem === 'yes'}
+            css={radioButtonStyle}
+            onChange={() => setDeliverySystem('yes')}
+          />
           <label htmlFor="yes" css={deliveryOptionLabelStyle}>{YES}</label>
-          <input {...register('hasDeliverySystem', {required: true})}type='radio' name='hasDeliverySystem' id='no' value="no" checked css={radioButtonStyle} />
+          <input
+            {...register('hasDeliverySystem', { required: true })}
+            type='radio'
+            name='hasDeliverySystem'
+            id='no'
+            value="no"
+            checked={deliverySystem  === 'no'}
+            css={radioButtonStyle}
+            onChange={() => setDeliverySystem('no')}
+          />
           <label htmlFor="no" css={deliveryOptionLabelStyle}>{NO}</label>
         </div>
       </div>
 
-      <button disabled={!isDirty || !isValid} css={submitButtonStyle}>{CREATE_SHOP}</button>
+      <button disabled={!isDirty || !isValid} css={submitButtonStyle}>{shopId ? EDIT_SHOP : CREATE_SHOP}</button>
     </form>
 
     {isSnackbarOpen && <Snackbar onClose={handleCloseSnackbar} open={isSnackbarOpen} message={COMMON_ERROR} />}

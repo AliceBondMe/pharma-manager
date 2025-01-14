@@ -4,4 +4,6 @@ export { default as AuthMotto } from "./AuthMotto/AuthMotto";
 export { default as RegistrationForm } from "./AuthForms/RegistrationForm";
 export { default as LoginForm } from "./AuthForms/LoginForm";
 export { default as ShopForm } from "./ShopForm/ShopForm";
+export { default as ShopsList } from "./ShopsList/ShopsList";
+export { default as ShopCard } from "./ShopCard/ShopCard";
 

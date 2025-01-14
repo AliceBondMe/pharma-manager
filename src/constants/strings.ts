@@ -28,10 +28,16 @@ export const TERMS = 'Terms & Conditions';
 export const FOOTER_TEXT = 'Created a drug franchise that embodies effective formulas and changes the approach to treatment.';
 
 // shops
-export const CREATE_SHOP_TITLE = 'Create your Shop';
+export const CREATE_SHOP_TITLE = 'Create your shop';
+export const EDIT_SHOP_TITLE = 'Edit this shop';
 export const SHOP_INFO_WARNING = 'This information will be displayed publicly so be careful what you share.';
-
+export const YOUR_SHOPS = 'Your shops:';
 export const BOTTLE_PICTURE_ALT = 'Spilled medicine bottle with pills lying near'
+export const DELIVERY_SYSTEM = 'Own delivery'
+export const MEDICINES_ADDED = 'medicines added'
+export const NO_SHOPS = 'You have no shops yet'
+export const CREATE_NEW_SHOP = 'Create new shop'
+export const ACTIVATE_SHOP = 'Click on the shop you are going to work with'
 
 // forms
 export const DEFAULT_PLACEHOLDER = 'Enter text';
@@ -66,6 +72,9 @@ export const NO = 'No';
 export const BUTTON_REGISTER = 'Register';
 export const BUTTON_LOGIN = 'Log in';
 export const CREATE_SHOP = 'Create shop';
+export const EDIT_SHOP = 'Edit shop';
+export const BUTTON_EDIT_DATA = 'Edit data';
+export const BUTTON_DELETE = 'Delete';
 
 // common errors
 export const COMMON_ERROR = 'Something went wrong, please, try again later'
